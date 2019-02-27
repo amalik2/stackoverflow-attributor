@@ -1,0 +1,24 @@
+{
+  "name": "stackoverflow-attributor",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/amalik2/stackoverflow-attributor.git"
+  },
+  "keywords": [],
+  "author": "Adil Malik",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/amalik2/stackoverflow-attributor/issues"
+  },
+  "homepage": "https://github.com/amalik2/stackoverflow-attributor#readme",
+  "dependencies": {
+    "jsdom": "^13.2.0",
+    "request-promise": "^4.2.4"
+  }
+}
