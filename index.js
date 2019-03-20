@@ -22,15 +22,21 @@ rp(url).then((res) => {
     const answer = dom.window.document.querySelector(`#answer-${answerId}`);
 
     const answerAnchors = answer.querySelectorAll(".user-details a");
+    const includedAnswerers = {};
     for (let i = answerAnchors.length - 1; i >= 0; --i) {
         if (i === answerAnchors.length - 1) {
             output += `[Answer by ${answerAnchors[i].innerHTML}](${url})\n  `;
         }
 
-        output += getUserDetails(answerAnchors[i]);
+        const details = getUserDetails(answerAnchors[i]);
+        if (includedAnswerers[details]) {
+            continue;
+        }
+        output += details;
         if (i > 0) {
             output += ", "
         }
+        includedAnswerers[details] = true;
     }
 
     const questionAsker = dom.window.document.querySelector(".post-layout:nth-child(1) .post-signature.owner .user-details a");
